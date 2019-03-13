@@ -10,31 +10,22 @@ Target Server Type    : MYSQL
 Target Server Version : 50725
 File Encoding         : 65001
 
-Date: 2019-03-10 22:24:34
+Date: 2019-03-13 22:48:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for houseinfo
+-- Table structure for houseequip
 -- ----------------------------
-DROP TABLE IF EXISTS `houseinfo`;
-CREATE TABLE `houseinfo` (
+DROP TABLE IF EXISTS `houseequip`;
+CREATE TABLE `houseequip` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `houseType` int(1) DEFAULT NULL COMMENT '户型：1=一居室；2=二居室；3=三居室；4=四居室以上',
-  `direction` varchar(0) DEFAULT NULL COMMENT '朝向',
-  `area` double DEFAULT NULL COMMENT '房屋面积（单位：平方米）',
-  `monthlyRent` double DEFAULT NULL COMMENT '月租（单位：元）',
-  `sellType` int(1) DEFAULT NULL COMMENT '房屋买卖类型：1=新房；2=二手房；3=出租房',
-  `releaseDate` datetime DEFAULT NULL COMMENT '发布日期',
-  `floor` int(2) DEFAULT NULL COMMENT '楼层',
-  `addr` varchar(255) DEFAULT NULL COMMENT '地址',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
-
--- ----------------------------
--- Records of houseinfo
--- ----------------------------
+  `equipName` varchar(255) DEFAULT NULL COMMENT '配套名称（电视，空调等）',
+  `houseId` int(11) DEFAULT NULL COMMENT '房屋信息id',
+  `houseType` int(1) unsigned zerofill DEFAULT '0' COMMENT '0=租房；1=二手房；2=新房；',
+  PRIMARY KEY (`id`)
+) ;
 
 -- ----------------------------
 -- Table structure for imghouse
@@ -43,10 +34,27 @@ DROP TABLE IF EXISTS `imghouse`;
 CREATE TABLE `imghouse` (
   `id` int(11) NOT NULL,
   `imgPath` varchar(255) DEFAULT NULL COMMENT '图片路径',
-  `houseid` int(11) DEFAULT NULL COMMENT '房屋信息id',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+  `houseId` int(11) DEFAULT NULL COMMENT '房屋信息id',
+  `houseType` int(1) unsigned zerofill DEFAULT '0' COMMENT '0=租房；1=二手房；2=新房；',
+  PRIMARY KEY (`id`)
+) ;
 
 -- ----------------------------
--- Records of imghouse
+-- Table structure for renthouse
 -- ----------------------------
+DROP TABLE IF EXISTS `renthouse`;
+CREATE TABLE `renthouse` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL COMMENT '房源标题',
+  `monthlyRent` int(11) DEFAULT NULL COMMENT '月租（单位：元）',
+  `payType` varchar(255) DEFAULT NULL COMMENT '付款方式（押一付三）',
+  `rentType` varchar(255) DEFAULT NULL COMMENT '租赁方式（整租等）',
+  `roomType` varchar(255) DEFAULT NULL COMMENT '房屋类型（两室一厅等）',
+  `area` int(11) DEFAULT NULL COMMENT '房屋面积（单位：平方米）',
+  `floor` int(2) DEFAULT NULL COMMENT '楼层',
+  `addr` varchar(255) DEFAULT NULL COMMENT '地址',
+  `decoration` varchar(255) DEFAULT NULL COMMENT '装修情况（简单装修，豪华装修等）',
+  `releaseDate` varchar(255) DEFAULT NULL COMMENT '发布日期',
+  `fristImg` varchar(255) DEFAULT NULL COMMENT '第一张房源图片地址',
+  PRIMARY KEY (`id`)
+) ;
