@@ -9,36 +9,67 @@ import us.codecraft.webmagic.model.annotation.HelpUrl;
 import us.codecraft.webmagic.model.annotation.TargetUrl;
 
 @TargetUrl("https://sy.58.com/zufang/*.shtml")
-@HelpUrl("https://sy.58.com/zufang/")
-public class houseInfo implements AfterExtractor {
+public class HouseInfo implements AfterExtractor {
 
-    private String houseType;
-
+    /**
+     * 房源标题
+     */
     @ExtractBy("//h1/text()")
-    private String direction = "";
-
-    private String area;
-
+    private String title;
+    /**
+     * 月租（元/月）
+     */
+    @ExtractBy("//b[@class='f36 strongbox']/text()")
     private String monthlyRent;
-    private String sellType;
-    private String releaseDate;
+    /**
+     * 付款方式（押一付三等）
+     */
+    @ExtractBy("//span[@class='c_333']/text()")
+    private String payType;
+    /**
+     * 租赁方式（整租等）
+     */
+    @ExtractBy("//ul[@class='f14']/li[1]/span[2]/text()")
+    private String rentType;
+    /**
+     * 房屋类型（两室一厅等）
+     */
+    @ExtractBy("//ul[@class='f14']/li[2]/span[2]/text()")
+    private String roomType;
+    /**
+     * 面积
+     */
+    private String area;
+    /**
+     * 楼层
+     */
+    @ExtractBy("//ul[@class='f14']/li[3]/span[2]/text()")
     private String floor;
+    /**
+     * 地址
+     */
+    @ExtractBy("//span[@class='dz']/text()")
     private String addr;
+    /**
+     * 装修情况（简单装修，豪华装修等）
+     */
+    private String decoration;
+    /**
+     * 发布时间
+     */
+    private String releaseDate;
+    /**
+     * 房源首图
+     */
+    @ExtractBy("///img[@id='smainPic']/@src")
+    private String fristImg;
 
-    public String getHouseType() {
-        return houseType;
+    public String getTitle() {
+        return title;
     }
 
-    public void setHouseType(String houseType) {
-        this.houseType = houseType;
-    }
-
-    public String getArea() {
-        return area;
-    }
-
-    public void setArea(String area) {
-        this.area = area;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getMonthlyRent() {
@@ -49,20 +80,36 @@ public class houseInfo implements AfterExtractor {
         this.monthlyRent = monthlyRent;
     }
 
-    public String getSellType() {
-        return sellType;
+    public String getPayType() {
+        return payType;
     }
 
-    public void setSellType(String sellType) {
-        this.sellType = sellType;
+    public void setPayType(String payType) {
+        this.payType = payType;
     }
 
-    public String getReleaseDate() {
-        return releaseDate;
+    public String getRentType() {
+        return rentType;
     }
 
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
+    public void setRentType(String rentType) {
+        this.rentType = rentType;
+    }
+
+    public String getRoomType() {
+        return roomType;
+    }
+
+    public void setRoomType(String roomType) {
+        this.roomType = roomType;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
     }
 
     public String getFloor() {
@@ -81,27 +128,30 @@ public class houseInfo implements AfterExtractor {
         this.addr = addr;
     }
 
-    @Override
-    public String toString() {
-        return "houseInfo{" +
-                "houseType='" + houseType + '\'' +
-                ", direction='" + direction + '\'' +
-                ", area='" + area + '\'' +
-                ", monthlyRent='" + monthlyRent + '\'' +
-                ", sellType='" + sellType + '\'' +
-                ", releaseDate='" + releaseDate + '\'' +
-                ", floor='" + floor + '\'' +
-                ", addr='" + addr + '\'' +
-                '}';
+    public String getDecoration() {
+        return decoration;
     }
 
-    public String getDirection() {
-        return direction;
+    public void setDecoration(String decoration) {
+        this.decoration = decoration;
     }
 
-    public void setDirection(String direction) {
-        this.direction = direction;
+    public String getReleaseDate() {
+        return releaseDate;
     }
+
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public String getFristImg() {
+        return fristImg;
+    }
+
+    public void setFristImg(String fristImg) {
+        this.fristImg = fristImg;
+    }
+
     //    @ExtractBy("//h1/text()")
 //    private String title="";
 //    @ExtractBy("//p[@class='job-item-title']/text()")
