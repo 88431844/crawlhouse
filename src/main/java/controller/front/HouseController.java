@@ -1,6 +1,7 @@
 package controller.front;
 
-import crawl._58Crawl;
+import crawl.crawl;
+import entity.AnjukeInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class HouseController {
 
     @Autowired
-    private _58Crawl crawl58;
+    private crawl crawl;
 
     @RequestMapping("/index")
     public ModelAndView wall(){
@@ -26,7 +27,7 @@ public class HouseController {
     public ModelAndView crawl(){
         ModelAndView modelAndView = new ModelAndView();
         System.out.println("----- house crawling .....");
-        crawl58._58CrawlRun();
+        crawl.crawlRun("https://sy.zu.anjuke.com/fangyuan", AnjukeInfo.class,1);
 
 
         modelAndView.setViewName("front/houseList");

@@ -1,20 +1,18 @@
 package crawl;
-import entity.HouseInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import pipeline._58pipline;
+import pipeline.MysqlPipline;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.model.OOSpider;
 
 @Component
-public class _58Crawl {
+public class crawl {
 
     @Autowired
-    private _58pipline pipline;
+    private MysqlPipline pipline;
 
-    public void _58CrawlRun() {
-        System.out.println("--------- _58CrawlRun");
+    public void crawlRun(String addUrl,Class t,int thread ) {
+        System.out.println("--------- crawlRun");
         OOSpider.create(Site.me()
                 .setSleepTime(500)
                 .setRetryTimes(3)
@@ -24,16 +22,9 @@ public class _58Crawl {
                 .setUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) " +
                         "AppleWebKit/537.36 (KHTML, like Gecko) " +
                         "Chrome/31.0.1650.57 Safari/537.36"),
-                pipline, HouseInfo.class)
-                .addUrl("https://sy.58.com/zufang/")
-                .thread(1)
+                pipline, t)
+                .addUrl(addUrl)
+                .thread(thread)
                 .run();
     }
-
-    public static void main(String[] args) {
-        _58Crawl crawl = new _58Crawl();
-        crawl._58CrawlRun();
-    }
-
-
 }

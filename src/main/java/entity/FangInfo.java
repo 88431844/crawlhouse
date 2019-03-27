@@ -1,9 +1,9 @@
 package entity;
 
-import us.codecraft.webmagic.Page;
-import us.codecraft.webmagic.model.AfterExtractor;
+import us.codecraft.webmagic.model.annotation.TargetUrl;
 
-public class HouseInfo implements AfterExtractor {
+@TargetUrl("https://sy.zu.fang.com/chuzu/*.htm")
+public class FangInfo extends HouseInfo{
 
     /**
      * 房源标题
@@ -49,184 +49,114 @@ public class HouseInfo implements AfterExtractor {
      * 房源首图
      */
     private String fristImg;
-    /**
-     * 朝向（东北等）
-     */
-    private String faceto;
 
+    @Override
     public String getTitle() {
         return title;
     }
 
+    @Override
     public void setTitle(String title) {
         this.title = title;
     }
 
+    @Override
     public String getMonthlyRent() {
         return monthlyRent;
     }
 
+    @Override
     public void setMonthlyRent(String monthlyRent) {
         this.monthlyRent = monthlyRent;
     }
 
+    @Override
     public String getPayType() {
         return payType;
     }
 
+    @Override
     public void setPayType(String payType) {
         this.payType = payType;
     }
 
+    @Override
     public String getRentType() {
         return rentType;
     }
 
+    @Override
     public void setRentType(String rentType) {
         this.rentType = rentType;
     }
 
+    @Override
     public String getRoomType() {
         return roomType;
     }
 
+    @Override
     public void setRoomType(String roomType) {
         this.roomType = roomType;
     }
 
+    @Override
     public String getArea() {
         return area;
     }
 
+    @Override
     public void setArea(String area) {
         this.area = area;
     }
 
+    @Override
     public String getFloor() {
         return floor;
     }
 
+    @Override
     public void setFloor(String floor) {
         this.floor = floor;
     }
 
+    @Override
     public String getAddr() {
         return addr;
     }
 
+    @Override
     public void setAddr(String addr) {
         this.addr = addr;
     }
 
+    @Override
     public String getDecoration() {
         return decoration;
     }
 
+    @Override
     public void setDecoration(String decoration) {
         this.decoration = decoration;
     }
 
+    @Override
     public String getReleaseDate() {
         return releaseDate;
     }
 
+    @Override
     public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
 
+    @Override
     public String getFristImg() {
         return fristImg;
     }
 
+    @Override
     public void setFristImg(String fristImg) {
         this.fristImg = fristImg;
-    }
-
-    public String getFaceto() {
-        return faceto;
-    }
-
-    public void setFaceto(String faceto) {
-        this.faceto = faceto;
-    }
-
-    //    @ExtractBy("//h1/text()")
-//    private String title="";
-//    @ExtractBy("//p[@class='job-item-title']/text()")
-//    private String salary="";
-//    @ExtractBy("//div[@class='title-info']/h3/a/text()")
-//    private String company="";
-//    @ExtractBy("//div[@class='content content-word']/allText()")
-//    private String description="";
-//    private String source="sy.58.com";
-//    @ExtractByUrl
-//    private String url="";
-//    private String urlMd5="";
-
-//    public String getTitle() {
-//        return title;
-//    }
-//
-//    public void setTitle(String title) {
-//        this.title = title;
-//    }
-//
-//    public String getCompany() {
-//        return company;
-//    }
-//
-//    public void setCompany(String company) {
-//        this.company = company;
-//    }
-//
-//    public String getDescription() {
-//        return description;
-//    }
-//
-//    public void setDescription(String description) {
-//        if (description!=null){
-//            this.description = description;
-//        }
-//    }
-//
-//    public String getSource() {
-//        return source;
-//    }
-//
-//    public void setSource(String source) {
-//        this.source = source;
-//    }
-//
-//    public String getUrl() {
-//        return url;
-//    }
-//
-//    public void setUrl(String url) {
-//        this.url = url;
-//        this.urlMd5 = DigestUtils.md5Hex(url);
-//    }
-//
-//    public String getSalary() {
-//        return salary;
-//    }
-//
-//    public void setSalary(String salary) {
-//        this.salary = salary;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "JobInfo{" +
-//                "title='" + title + '\'' +
-//                ", salary='" + salary + '\'' +
-//                ", company='" + company + '\'' +
-//                ", description='" + description + '\'' +
-//                ", source='" + source + '\'' +
-//                ", url='" + url + '\'' +
-//                '}';
-//    }
-
-    @Override
-    public void afterProcess(Page page) {
     }
 }

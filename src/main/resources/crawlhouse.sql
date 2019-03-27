@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50725
 File Encoding         : 65001
 
-Date: 2019-03-13 22:48:17
+Date: 2019-03-27 22:37:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -22,10 +22,10 @@ DROP TABLE IF EXISTS `houseequip`;
 CREATE TABLE `houseequip` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `equipName` varchar(255) DEFAULT NULL COMMENT '配套名称（电视，空调等）',
-  `houseId` int(11) DEFAULT NULL COMMENT '房屋信息id',
+  `houseId` int(11) DEFAULT NULL,
   `houseType` int(1) unsigned zerofill DEFAULT '0' COMMENT '0=租房；1=二手房；2=新房；',
   PRIMARY KEY (`id`)
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Table structure for imghouse
@@ -36,8 +36,8 @@ CREATE TABLE `imghouse` (
   `imgPath` varchar(255) DEFAULT NULL COMMENT '图片路径',
   `houseId` int(11) DEFAULT NULL COMMENT '房屋信息id',
   `houseType` int(1) unsigned zerofill DEFAULT '0' COMMENT '0=租房；1=二手房；2=新房；',
-  PRIMARY KEY (`id`)
-) ;
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Table structure for renthouse
@@ -56,5 +56,6 @@ CREATE TABLE `renthouse` (
   `decoration` varchar(255) DEFAULT NULL COMMENT '装修情况（简单装修，豪华装修等）',
   `releaseDate` varchar(255) DEFAULT NULL COMMENT '发布日期',
   `fristImg` varchar(255) DEFAULT NULL COMMENT '第一张房源图片地址',
-  PRIMARY KEY (`id`)
-) ;
+  `faceto` varchar(255) DEFAULT NULL COMMENT '朝向',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;

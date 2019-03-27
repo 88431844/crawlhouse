@@ -11,7 +11,7 @@ import us.codecraft.webmagic.pipeline.PageModelPipeline;
 import javax.annotation.Resource;
 
 @Component
-public class _58pipline implements PageModelPipeline<HouseInfo> {
+public class MysqlPipline implements PageModelPipeline<HouseInfo> {
     @Resource
     private houseInfoDao houseInfoDao;
 
