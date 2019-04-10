@@ -66,6 +66,11 @@ public class AnjukeInfo extends HouseInfo{
      */
     @ExtractBy("//ul[@class='house-info-zufang cf']/li[4]/span[2]/text()")
     private String faceto;
+    /**
+     * 来源
+     */
+    private String source = "安居客";
+
     @Override
     public String getTitle() {
         return title;
@@ -184,5 +189,15 @@ public class AnjukeInfo extends HouseInfo{
     @Override
     public void setFaceto(String faceto) {
         this.faceto = faceto;
+    }
+
+    @Override
+    public String getSource() {
+        return source;
+    }
+
+    @Override
+    public void setSource(String source) {
+        this.source = source;
     }
 }

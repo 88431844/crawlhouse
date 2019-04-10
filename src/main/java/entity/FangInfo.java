@@ -4,7 +4,6 @@ import us.codecraft.webmagic.model.annotation.TargetUrl;
 
 @TargetUrl("https://sy.zu.fang.com/chuzu/*.htm")
 public class FangInfo extends HouseInfo{
-
     /**
      * 房源标题
      */
@@ -49,6 +48,14 @@ public class FangInfo extends HouseInfo{
      * 房源首图
      */
     private String fristImg;
+    /**
+     * 朝向（东北等）
+     */
+    private String faceto;
+    /**
+     * 来源
+     */
+    private String source = "房天下";
 
     @Override
     public String getTitle() {
@@ -159,4 +166,25 @@ public class FangInfo extends HouseInfo{
     public void setFristImg(String fristImg) {
         this.fristImg = fristImg;
     }
+
+    @Override
+    public String getFaceto() {
+        return faceto;
+    }
+
+    @Override
+    public void setFaceto(String faceto) {
+        this.faceto = faceto;
+    }
+
+    @Override
+    public String getSource() {
+        return source;
+    }
+
+    @Override
+    public void setSource(String source) {
+        this.source = source;
+    }
 }
+

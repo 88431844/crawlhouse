@@ -53,6 +53,12 @@ public class HouseInfo implements AfterExtractor {
      * 朝向（东北等）
      */
     private String faceto;
+    /**
+     * 来源：
+     * 安居客
+     * 房天下
+     */
+    private String source;
 
     public String getTitle() {
         return title;
@@ -148,6 +154,14 @@ public class HouseInfo implements AfterExtractor {
 
     public void setFaceto(String faceto) {
         this.faceto = faceto;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
     }
 
     //    @ExtractBy("//h1/text()")
