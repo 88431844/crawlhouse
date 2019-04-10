@@ -3,7 +3,7 @@ package entity;
 import us.codecraft.webmagic.model.annotation.ExtractBy;
 import us.codecraft.webmagic.model.annotation.TargetUrl;
 
-@TargetUrl("https://sy.zu.anjuke.com/fangyuan/*")
+@TargetUrl("https://sy.zu.anjuke.com/fangyuan/(0|[1-9][0-9]*)")
 public class AnjukeInfo extends HouseInfo{
 
     /**

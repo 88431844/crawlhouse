@@ -5,6 +5,7 @@ import entity.AnjukeInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -24,14 +25,9 @@ public class HouseController {
     }
 
     @RequestMapping("/crawl")
-    public ModelAndView crawl(){
-        ModelAndView modelAndView = new ModelAndView();
-        System.out.println("----- house crawling .....");
+    @ResponseBody
+    public String crawl(){
         crawl.crawlRun("https://sy.zu.anjuke.com/fangyuan", AnjukeInfo.class,1);
-
-
-        modelAndView.setViewName("front/houseList");
-
-        return modelAndView;
+        return "----- house crawling ....";
     }
 }
