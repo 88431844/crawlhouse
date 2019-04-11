@@ -50,7 +50,7 @@ public class HouseInfo {
     /**
      * 朝向（东北等）
      */
-    private String faceto;
+    private String faceTo;
     /**
      * 来源：
      * 安居客
@@ -146,12 +146,12 @@ public class HouseInfo {
         this.fristImg = fristImg;
     }
 
-    public String getFaceto() {
-        return faceto;
+    public String getFaceTo() {
+        return faceTo;
     }
 
-    public void setFaceto(String faceto) {
-        this.faceto = faceto;
+    public void setFaceTo(String faceTo) {
+        this.faceTo = faceTo;
     }
 
     public String getSource() {

@@ -51,7 +51,7 @@ public class FangInfo extends HouseInfo{
     /**
      * 朝向（东北等）
      */
-    private String faceto;
+    private String faceTo;
     /**
      * 来源
      */
@@ -167,15 +167,6 @@ public class FangInfo extends HouseInfo{
         this.fristImg = fristImg;
     }
 
-    @Override
-    public String getFaceto() {
-        return faceto;
-    }
-
-    @Override
-    public void setFaceto(String faceto) {
-        this.faceto = faceto;
-    }
 
     @Override
     public String getSource() {
@@ -185,6 +176,16 @@ public class FangInfo extends HouseInfo{
     @Override
     public void setSource(String source) {
         this.source = source;
+    }
+
+    @Override
+    public String getFaceTo() {
+        return faceTo;
+    }
+
+    @Override
+    public void setFaceTo(String faceTo) {
+        this.faceTo = faceTo;
     }
 }
 

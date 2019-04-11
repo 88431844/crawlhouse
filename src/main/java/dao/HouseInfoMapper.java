@@ -1,6 +1,7 @@
 package dao;
 
 import entity.HouseInfo;
+import java.util.List;
 
 public interface HouseInfoMapper {
     int deleteByPrimaryKey(Integer id);
@@ -16,4 +17,6 @@ public interface HouseInfoMapper {
     int updateByPrimaryKey(HouseInfo record);
 
     int haveHouseInfo(HouseInfo houseInfo);
+
+  List<HouseInfo> seach(HouseInfo houseInfo);
 }

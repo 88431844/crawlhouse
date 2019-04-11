@@ -17,7 +17,16 @@ public class MysqlPipeline implements PageModelPipeline<HouseInfo> {
 
     @Override
     public void process(HouseInfo houseInfo, Task task) {
+        if (!StringUtils.isEmpty(houseInfo.getReleaseDate())){
+            String newReleaseDate = houseInfo.getReleaseDate()
+                .replace("发布时间：","")
+                .replace("年","-")
+                .replace("月","-")
+                .replace("日","");
+            houseInfo.setReleaseDate(newReleaseDate);
+        }
         System.out.println("------ MysqlPipeline process : " + JSON.toJSONString(houseInfo));
+
         if (!StringUtils.isEmpty(houseInfo.getTitle())){
             if (0 == houseInfoMapper.haveHouseInfo(houseInfo)){
                 houseInfoMapper.insertSelective(houseInfo);

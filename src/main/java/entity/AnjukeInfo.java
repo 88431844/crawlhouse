@@ -20,6 +20,7 @@ public class AnjukeInfo extends HouseInfo{
      * 付款方式（押一付三等）
      */
 
+    @ExtractBy("//ul[@class='house-info-zufang cf']/li[1]/span[2]/text()")
     private String payType;
     /**
      * 租赁方式（整租等）
@@ -44,7 +45,7 @@ public class AnjukeInfo extends HouseInfo{
     /**
      * 地址
      */
-    @ExtractBy("//ul[@class='house-info-zufang cf']/li[8]/span[2]/text()")
+    @ExtractBy("//ul[@class='house-info-zufang cf']/li[8]/a/text()")
     private String addr;
     /**
      * 装修情况（简单装修，豪华装修等）
@@ -65,7 +66,7 @@ public class AnjukeInfo extends HouseInfo{
      * 朝向（东北等）
      */
     @ExtractBy("//ul[@class='house-info-zufang cf']/li[4]/span[2]/text()")
-    private String faceto;
+    private String faceTo;
     /**
      * 来源
      */
@@ -182,13 +183,13 @@ public class AnjukeInfo extends HouseInfo{
     }
 
     @Override
-    public String getFaceto() {
-        return faceto;
+    public String getFaceTo() {
+        return faceTo;
     }
 
     @Override
-    public void setFaceto(String faceto) {
-        this.faceto = faceto;
+    public void setFaceTo(String faceTo) {
+        this.faceTo = faceTo;
     }
 
     @Override

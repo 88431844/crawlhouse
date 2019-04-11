@@ -24,7 +24,7 @@ CREATE TABLE `admin` (
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Table structure for houseinfo
@@ -43,7 +43,7 @@ CREATE TABLE `houseinfo` (
   `decoration` varchar(255) DEFAULT NULL COMMENT '装修情况（简单装修，豪华装修等）',
   `releaseDate` varchar(255) DEFAULT NULL COMMENT '发布时间',
   `fristImg` varchar(255) DEFAULT NULL COMMENT '房源首图',
-  `faceto` varchar(255) DEFAULT NULL COMMENT '朝向（东北等）',
+  `faceTo` varchar(255) DEFAULT NULL COMMENT '朝向（东北等）',
   `source` varchar(255) DEFAULT NULL COMMENT '来源：房天下；安居客',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
