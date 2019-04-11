@@ -230,9 +230,6 @@
       <if test="faceTo != null">
         and faceTo = #{faceTo}
       </if>
-      <if test="source != null">
-        and source = #{source}
-      </if>
     </where>
 
   </select>
