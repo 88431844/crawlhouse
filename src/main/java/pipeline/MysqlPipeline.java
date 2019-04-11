@@ -17,8 +17,15 @@ public class MysqlPipeline implements PageModelPipeline<HouseInfo> {
 
     @Override
     public void process(HouseInfo houseInfo, Task task) {
+        if (!StringUtils.isEmpty(houseInfo.getPayType())){
+            String newPayType = houseInfo.getPayType()
+                    .replace("元/月（","")
+                    .replace("）","");
+            houseInfo.setPayType(newPayType);
+        }
         if (!StringUtils.isEmpty(houseInfo.getReleaseDate())){
             String newReleaseDate = houseInfo.getReleaseDate()
+                    .replace("更新时间 ","")
                 .replace("发布时间：","")
                 .replace("年","-")
                 .replace("月","-")

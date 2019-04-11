@@ -11,14 +11,14 @@ public class crawl {
     @Autowired
     private MysqlPipeline pipline;
 
-    public void crawlRun(String addUrl,Class t,int thread ) {
+    public void crawlRun(String addUrl,Class t,int thread,String charset ) {
         System.out.println("--------- crawlRun");
         OOSpider.create(Site.me()
                 .setSleepTime(500)
                 .setRetryTimes(3)
-                .setCharset("utf-8")
-                .addHeader("Accept","application/json;charset=utf-8")
-                .addHeader("Content-Type","application/json;charset=utf-8")
+                .setCharset(charset)
+                .addHeader("Accept","application/json;charset="+charset)
+                .addHeader("Content-Type","application/json;charset="+charset)
                 .setUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) " +
                         "AppleWebKit/537.36 (KHTML, like Gecko) " +
                         "Chrome/31.0.1650.57 Safari/537.36"),

@@ -1,56 +1,71 @@
 package entity;
 
+import us.codecraft.webmagic.model.annotation.ExtractBy;
 import us.codecraft.webmagic.model.annotation.TargetUrl;
 
-@TargetUrl("https://sy.zu.fang.com/chuzu/*.htm")
+//@TargetUrl("https://sy.zu.fang.com/chuzu/([0-9_][0-9_][0-9_][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9_][0-9]).htm")
+@TargetUrl("https://sy.zu.fang.com/chuzu/([0-9][0-9_][0-9_][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9_][0-9]).htm")
+
 public class FangInfo extends HouseInfo{
     /**
      * 房源标题
      */
+    @ExtractBy("//h1[@class='title']/text()")
     private String title;
     /**
      * 月租（元/月）
      */
+    @ExtractBy("//div[@class='trl-item sty1']/i/text()")
     private String monthlyRent;
     /**
      * 付款方式（押一付三等）
      */
+    @ExtractBy("//div[@class='trl-item sty1']/text()")
     private String payType;
     /**
      * 租赁方式（整租等）
      */
+    @ExtractBy("//div[@class='tr-line clearfix']/div[1]/div[@class='tt']/text()")
     private String rentType;
     /**
      * 房屋类型（两室一厅等）
      */
+    @ExtractBy("//div[@class='trl-item1 w182']/div[@class='tt']/text()")
     private String roomType;
     /**
      * 面积
      */
+    @ExtractBy("//div[@class='tr-line clearfix']/div[1]/div[@class='tt']/text()")
     private String area;
     /**
      * 楼层
      */
+    @ExtractBy("//div[@class='trl-item1 w182']/div[@class='tt']/text()")
     private String floor;
     /**
      * 地址
      */
+    @ExtractBy("//div[@class='tr-line clearfix']/div[2]/div[@class='tt']/text()")
     private String addr;
     /**
      * 装修情况（简单装修，豪华装修等）
      */
+    @ExtractBy("//div[@class='tr-line clearfix']/div[3]/div[@class='tt']/text()")
     private String decoration;
     /**
      * 发布时间
      */
+    @ExtractBy("//p[@class='gray9 fybh-zf']/span[2]/text()")
     private String releaseDate;
     /**
      * 房源首图
      */
+    @ExtractBy("//div[@class='bigImg']/img[1]/@src")
     private String fristImg;
     /**
      * 朝向（东北等）
      */
+    @ExtractBy("//div[@class='tr-line clearfix']/div[2]/div[@class='tt']/text()")
     private String faceTo;
     /**
      * 来源
