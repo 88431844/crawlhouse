@@ -1,6 +1,6 @@
 package service;
 
-public interface TestService {
+public interface AdminService {
 
     public void testMysql();
 }

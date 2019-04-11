@@ -1,9 +1,7 @@
 package entity;
 
-import us.codecraft.webmagic.Page;
-import us.codecraft.webmagic.model.AfterExtractor;
-
-public class HouseInfo implements AfterExtractor {
+public class HouseInfo {
+    private Integer id;
 
     /**
      * 房源标题
@@ -164,83 +162,11 @@ public class HouseInfo implements AfterExtractor {
         this.source = source;
     }
 
-    //    @ExtractBy("//h1/text()")
-//    private String title="";
-//    @ExtractBy("//p[@class='job-item-title']/text()")
-//    private String salary="";
-//    @ExtractBy("//div[@class='title-info']/h3/a/text()")
-//    private String company="";
-//    @ExtractBy("//div[@class='content content-word']/allText()")
-//    private String description="";
-//    private String source="sy.58.com";
-//    @ExtractByUrl
-//    private String url="";
-//    private String urlMd5="";
+    public Integer getId() {
+        return id;
+    }
 
-//    public String getTitle() {
-//        return title;
-//    }
-//
-//    public void setTitle(String title) {
-//        this.title = title;
-//    }
-//
-//    public String getCompany() {
-//        return company;
-//    }
-//
-//    public void setCompany(String company) {
-//        this.company = company;
-//    }
-//
-//    public String getDescription() {
-//        return description;
-//    }
-//
-//    public void setDescription(String description) {
-//        if (description!=null){
-//            this.description = description;
-//        }
-//    }
-//
-//    public String getSource() {
-//        return source;
-//    }
-//
-//    public void setSource(String source) {
-//        this.source = source;
-//    }
-//
-//    public String getUrl() {
-//        return url;
-//    }
-//
-//    public void setUrl(String url) {
-//        this.url = url;
-//        this.urlMd5 = DigestUtils.md5Hex(url);
-//    }
-//
-//    public String getSalary() {
-//        return salary;
-//    }
-//
-//    public void setSalary(String salary) {
-//        this.salary = salary;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "JobInfo{" +
-//                "title='" + title + '\'' +
-//                ", salary='" + salary + '\'' +
-//                ", company='" + company + '\'' +
-//                ", description='" + description + '\'' +
-//                ", source='" + source + '\'' +
-//                ", url='" + url + '\'' +
-//                '}';
-//    }
-
-    @Override
-    public void afterProcess(Page page) {
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

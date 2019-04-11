@@ -1,9 +1,10 @@
-package service;
+package service.impl;
 
 import org.springframework.stereotype.Service;
+import service.AdminService;
 
 @Service
-public class TestServiceImpl implements TestService{
+public class AdminServiceImpl implements AdminService {
 
     @Override
     public void testMysql() {

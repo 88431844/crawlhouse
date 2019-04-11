@@ -1,7 +1,7 @@
 package crawl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import pipeline.MysqlPipline;
+import pipeline.MysqlPipeline;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.model.OOSpider;
 
@@ -9,7 +9,7 @@ import us.codecraft.webmagic.model.OOSpider;
 public class crawl {
 
     @Autowired
-    private MysqlPipline pipline;
+    private MysqlPipeline pipline;
 
     public void crawlRun(String addUrl,Class t,int thread ) {
         System.out.println("--------- crawlRun");

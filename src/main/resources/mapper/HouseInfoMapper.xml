@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.HouseInfoMapper">
+  <resultMap id="BaseResultMap" type="entity.HouseInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="monthlyRent" jdbcType="VARCHAR" property="monthlyrent" />
+    <result column="payType" jdbcType="VARCHAR" property="paytype" />
+    <result column="rentType" jdbcType="VARCHAR" property="renttype" />
+    <result column="roomType" jdbcType="VARCHAR" property="roomtype" />
+    <result column="area" jdbcType="VARCHAR" property="area" />
+    <result column="floor" jdbcType="VARCHAR" property="floor" />
+    <result column="addr" jdbcType="VARCHAR" property="addr" />
+    <result column="decoration" jdbcType="VARCHAR" property="decoration" />
+    <result column="releaseDate" jdbcType="VARCHAR" property="releasedate" />
+    <result column="fristImg" jdbcType="VARCHAR" property="fristimg" />
+    <result column="faceto" jdbcType="VARCHAR" property="faceto" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, title, monthlyRent, payType, rentType, roomType, area, floor, addr, decoration, 
+    releaseDate, fristImg, faceto, source
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from houseinfo
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from houseinfo
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="entity.HouseInfo">
+    insert into houseinfo (id, title, monthlyRent, 
+      payType, rentType, roomType, 
+      area, floor, addr, 
+      decoration, releaseDate, fristImg, 
+      faceto, source)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{monthlyrent,jdbcType=VARCHAR}, 
+      #{paytype,jdbcType=VARCHAR}, #{renttype,jdbcType=VARCHAR}, #{roomtype,jdbcType=VARCHAR}, 
+      #{area,jdbcType=VARCHAR}, #{floor,jdbcType=VARCHAR}, #{addr,jdbcType=VARCHAR}, 
+      #{decoration,jdbcType=VARCHAR}, #{releasedate,jdbcType=VARCHAR}, #{fristimg,jdbcType=VARCHAR}, 
+      #{faceto,jdbcType=VARCHAR}, #{source,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="entity.HouseInfo">
+    insert into houseinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="monthlyrent != null">
+        monthlyRent,
+      </if>
+      <if test="paytype != null">
+        payType,
+      </if>
+      <if test="renttype != null">
+        rentType,
+      </if>
+      <if test="roomtype != null">
+        roomType,
+      </if>
+      <if test="area != null">
+        area,
+      </if>
+      <if test="floor != null">
+        floor,
+      </if>
+      <if test="addr != null">
+        addr,
+      </if>
+      <if test="decoration != null">
+        decoration,
+      </if>
+      <if test="releasedate != null">
+        releaseDate,
+      </if>
+      <if test="fristimg != null">
+        fristImg,
+      </if>
+      <if test="faceto != null">
+        faceto,
+      </if>
+      <if test="source != null">
+        source,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="monthlyrent != null">
+        #{monthlyrent,jdbcType=VARCHAR},
+      </if>
+      <if test="paytype != null">
+        #{paytype,jdbcType=VARCHAR},
+      </if>
+      <if test="renttype != null">
+        #{renttype,jdbcType=VARCHAR},
+      </if>
+      <if test="roomtype != null">
+        #{roomtype,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="floor != null">
+        #{floor,jdbcType=VARCHAR},
+      </if>
+      <if test="addr != null">
+        #{addr,jdbcType=VARCHAR},
+      </if>
+      <if test="decoration != null">
+        #{decoration,jdbcType=VARCHAR},
+      </if>
+      <if test="releasedate != null">
+        #{releasedate,jdbcType=VARCHAR},
+      </if>
+      <if test="fristimg != null">
+        #{fristimg,jdbcType=VARCHAR},
+      </if>
+      <if test="faceto != null">
+        #{faceto,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.HouseInfo">
+    update houseinfo
+    <set>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="monthlyrent != null">
+        monthlyRent = #{monthlyrent,jdbcType=VARCHAR},
+      </if>
+      <if test="paytype != null">
+        payType = #{paytype,jdbcType=VARCHAR},
+      </if>
+      <if test="renttype != null">
+        rentType = #{renttype,jdbcType=VARCHAR},
+      </if>
+      <if test="roomtype != null">
+        roomType = #{roomtype,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        area = #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="floor != null">
+        floor = #{floor,jdbcType=VARCHAR},
+      </if>
+      <if test="addr != null">
+        addr = #{addr,jdbcType=VARCHAR},
+      </if>
+      <if test="decoration != null">
+        decoration = #{decoration,jdbcType=VARCHAR},
+      </if>
+      <if test="releasedate != null">
+        releaseDate = #{releasedate,jdbcType=VARCHAR},
+      </if>
+      <if test="fristimg != null">
+        fristImg = #{fristimg,jdbcType=VARCHAR},
+      </if>
+      <if test="faceto != null">
+        faceto = #{faceto,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null">
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.HouseInfo">
+    update houseinfo
+    set title = #{title,jdbcType=VARCHAR},
+      monthlyRent = #{monthlyrent,jdbcType=VARCHAR},
+      payType = #{paytype,jdbcType=VARCHAR},
+      rentType = #{renttype,jdbcType=VARCHAR},
+      roomType = #{roomtype,jdbcType=VARCHAR},
+      area = #{area,jdbcType=VARCHAR},
+      floor = #{floor,jdbcType=VARCHAR},
+      addr = #{addr,jdbcType=VARCHAR},
+      decoration = #{decoration,jdbcType=VARCHAR},
+      releaseDate = #{releasedate,jdbcType=VARCHAR},
+      fristImg = #{fristimg,jdbcType=VARCHAR},
+      faceto = #{faceto,jdbcType=VARCHAR},
+      source = #{source,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="haveHouseInfo" parameterType="entity.HouseInfo" resultType="java.lang.Integer">
+    select
+    count(1)
+    from houseinfo
+    where title = #{title}
+  </select>
+</mapper>
