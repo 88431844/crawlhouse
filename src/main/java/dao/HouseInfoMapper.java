@@ -1,5 +1,6 @@
 package dao;
 
+import dto.HouseInfoDto;
 import entity.HouseInfo;
 
 import java.util.List;
@@ -20,4 +21,6 @@ public interface HouseInfoMapper {
     int haveHouseInfo(HouseInfo houseInfo);
 
     List<HouseInfo> seach(HouseInfo houseInfo);
+
+    List<HouseInfo> list();
 }

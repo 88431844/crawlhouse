@@ -200,41 +200,43 @@
     from houseinfo
     <where>
       1=1
-      <if test="monthlyRent != null">
-        and monthlyRent LIKE "%"#{monthlyRent}"%"
-      </if>
-      <if test="payType != null">
-        and payType = #{payType,jdbcType=VARCHAR}
+      <if test="title != null">
+      and title LIKE "%"#{title}"%"
       </if>
       <if test="rentType != null">
-        and rentType = #{rentType,jdbcType=VARCHAR}
-      </if>
-      <if test="roomType != null">
-        and roomType = #{roomType,jdbcType=VARCHAR}
-      </if>
-      <if test="area != null">
-        and area = #{area}
-      </if>
-      <if test="floor != null">
-        and floor = #{floor,jdbcType=VARCHAR}
+        and rentType = #{rentType}
       </if>
       <if test="addr != null">
-        and addr = #{addr,jdbcType=VARCHAR}
+        and addr LIKE "%"#{addr}"%"
       </if>
-      <if test="decoration != null">
-        and decoration = #{decoration,jdbcType=VARCHAR}
+
+      <if test="maxRent != null and minRent != null">
+        and monthlyRent between #{minRent} and #{maxRent}
       </if>
-      <if test="releaseDate != null">
-        and releaseDate = #{releaseDate,jdbcType=VARCHAR}
+      <if test="roomType != null">
+        and roomType LIKE "%"#{roomType}"%"
+      </if>
+      <if test="maxArea != null and minArea != null">
+        and area between #{minArea} and #{maxArea}
       </if>
 
       <if test="faceTo != null">
-        and faceTo = #{faceTo,jdbcType=VARCHAR}
+        and faceTo LIKE "%"#{faceTo}"%"
       </if>
-      <if test="source != null">
-        and source = #{source}
-      </if>
+      order by id desc limit 10
     </where>
 
+  </select>
+
+  <select id="list" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM
+    houseinfo
+    WHERE
+    1 = 1
+    ORDER BY
+    id DESC
+    LIMIT 6
   </select>
 </mapper>

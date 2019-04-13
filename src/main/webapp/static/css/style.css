@@ -684,7 +684,7 @@ Secondary color
   transform: translateY(0px);
 }
 .properties-image {
-  overflow: hidden;
+  /*overflow: hidden;*/
   position: relative;
 }
 .properties-image img {

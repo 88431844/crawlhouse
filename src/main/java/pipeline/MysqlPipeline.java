@@ -19,6 +19,12 @@ public class MysqlPipeline implements PageModelPipeline<HouseInfoDto> {
 
     @Override
     public void process(HouseInfoDto houseInfoDto, Task task) {
+        if (!StringUtils.isEmpty(houseInfoDto.getFristImg())){
+            if (!houseInfoDto.getFristImg().contains("http")){
+                String newFiristImg = "http:"+houseInfoDto.getFristImg();
+                houseInfoDto.setFristImg(newFiristImg);
+            }
+        }
         if (!StringUtils.isEmpty(houseInfoDto.getPayType())){
             String newPayType = houseInfoDto.getPayType()
                     .replace("元/月（","")

@@ -17,6 +17,7 @@ public class HouseInfoDto  extends HouseInfo {
   private String monthlyRentStr;
   private Integer maxRent;
   private Integer minRent;
+  private String monthlyRentRange;
   /**
    * 付款方式（押一付三等）
    */
@@ -30,12 +31,21 @@ public class HouseInfoDto  extends HouseInfo {
    */
   private String roomType;
   /**
+   * 几室
+   */
+  private Integer roomSum;
+  /**
+   * 几厅
+   */
+  private Integer hallSum;
+  /**
    * 面积
    */
   private Integer area;
   private String areaStr;
   private Integer maxArea;
   private Integer minArea;
+  private String areaRange;
   /**
    * 楼层
    */
@@ -63,7 +73,7 @@ public class HouseInfoDto  extends HouseInfo {
   /**
    * 朝向（东北等）
    */
-  private String faceto;
+  private String faceTo;
   /**
    * 来源：
    * 安居客
@@ -271,12 +281,14 @@ public class HouseInfoDto  extends HouseInfo {
     this.fristImg = fristImg;
   }
 
-  public String getFaceto() {
-    return faceto;
+  @Override
+  public String getFaceTo() {
+    return faceTo;
   }
 
-  public void setFaceto(String faceto) {
-    this.faceto = faceto;
+  @Override
+  public void setFaceTo(String faceTo) {
+    this.faceTo = faceTo;
   }
 
   @Override
@@ -287,5 +299,37 @@ public class HouseInfoDto  extends HouseInfo {
   @Override
   public void setSource(String source) {
     this.source = source;
+  }
+
+  public String getMonthlyRentRange() {
+    return monthlyRentRange;
+  }
+
+  public void setMonthlyRentRange(String monthlyRentRange) {
+    this.monthlyRentRange = monthlyRentRange;
+  }
+
+  public Integer getRoomSum() {
+    return roomSum;
+  }
+
+  public void setRoomSum(Integer roomSum) {
+    this.roomSum = roomSum;
+  }
+
+  public Integer getHallSum() {
+    return hallSum;
+  }
+
+  public void setHallSum(Integer hallSum) {
+    this.hallSum = hallSum;
+  }
+
+  public String getAreaRange() {
+    return areaRange;
+  }
+
+  public void setAreaRange(String areaRange) {
+    this.areaRange = areaRange;
   }
 }
