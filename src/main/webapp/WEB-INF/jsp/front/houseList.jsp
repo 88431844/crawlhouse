@@ -258,11 +258,11 @@
             <form action="#">
                 <div class="col-md-3 col-sm-6">
                     <div class="single-query">
-                        <label for="keyword-input">Keyword</label>
-                        <input type="text" id="keyword-input" placeholder="Any">
-                        <label>Bed Room</label>
-                        <select name="Any">
-                            <option value="any" selected>Any</option>
+                        <label for="keyword-input">关键字</label>
+                        <input type="text" id="keyword-input" placeholder="任意">
+                        <label>室</label>
+                        <select name="room">
+                            <option value="" selected>任意</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -273,17 +273,15 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-query">
-                        <label>Property Type</label>
+                        <label>租房类型</label>
                         <select>
-                            <option value="any" selected>Any</option>
-                            <option value="home">Home</option>
-                            <option value="resort">Resort</option>
-                            <option value="land">Land</option>
-                            <option value="Restrurent">Restrurent</option>
+                            <option value="0" selected>任意</option>
+                            <option value="整租">整租</option>
+                            <option value="合租">合租</option>
                         </select>
-                        <label>Bath Room</label>
+                        <label>厅</label>
                         <select>
-                            <option value="any" selected>Any</option>
+                            <option value="hall" selected>任意</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -294,48 +292,45 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-query">
-                        <label>Location</label>
+                        <label>地址</label>
+                        <input type="text" id="" placeholder="任意">
+                        <label>房屋面积（单位：平方米）</label>
                         <select>
-                            <option value="any" selected>Any</option>
-                            <option value="new york">new york</option>
-                            <option value="London">London</option>
-                            <option value="kosovo">kosovo</option>
-                            <option value="Los Angeles">Los Angeles</option>
-                        </select>
-                        <label>Minimum Price</label>
-                        <select>
-                            <option value="any">any</option>
-                            <option value="$200">$200</option>
-                            <option value="$2000">$2000</option>
-                            <option value="$20000">$20000</option>
-                            <option value="$200000">$200000</option>
-                            <option value="$2000000">$2000000</option>
+                            <option value="">任意</option>
+                            <option value="30">30以下</option>
+                            <option value="30-50">30-50</option>
+                            <option value="50-80">50-80</option>
+                            <option value="80-100">80-100</option>
+                            <option value="100-120">100-120</option>
+                            <option value="120">120以上</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-query">
-                        <label>Squre Fit</label>
+                        <label>租金（单位：元）</label>
                         <select>
-                            <option value="any" selected>Any</option>
-                            <option value="1000 sf">1000 sf</option>
-                            <option value="2000 sf">2000 sf</option>
-                            <option value="3000 sf">3000 sf</option>
-                            <option value="4000 sf">4000 sf</option>
-                            <option value="5000 sf">5000 sf</option>
+                            <option value="" selected>任意</option>
+                            <option value="500">500以下</option>
+                            <option value="500-800">500-800</option>
+                            <option value="800-1000">800-1000</option>
+                            <option value="1000-1500">1000-1500</option>
+                            <option value=" 1500-2000">1500-2000</option>
+                            <option value="2000-3000">2000-3000</option>
+                            <option value="3000-5000">3000-5000</option>
+                            <option value="5000">5000+</option>
                         </select>
-                        <label>Maximum Price</label>
+                        <label>朝向</label>
                         <select>
-                            <option value="any" selected>Any</option>
-                            <option value="$3000">$3000</option>
-                            <option value="$4000">$4000</option>
-                            <option value="$5000">$5000</option>
-                            <option value="$6000">$6000</option>
-                            <option value="$7000">$7000</option>
+                            <option value="" selected>任意</option>
+                            <option value="东">东</option>
+                            <option value="南">南</option>
+                            <option value="西">西</option>
+                            <option value="北">北</option>
                         </select>
                     </div>
                     <div class="query-submit-button pull-right">
-                        <input type="submit" value="Search">
+                        <input type="submit" value="搜索">
                     </div>
                 </div>
             </form>
@@ -365,7 +360,7 @@
                         </ul>
                     </div>
                     <div class="properties-content">
-                        <h3><a href="#">South Mervin Boulevard</a></h3>
+                        <h3><a href="#">South Mervin Boulevard001</a></h3>
                         <p><i class="fa fa-map-marker"></i> Merrick Way, Miami, USA</p>
                         <p class="detail-text">Lorem ipsum dolor sit amet, consectetuer adipiing elit. Aenean commodo ligula eget dolor. </p>
                         <div class="price-detail">
@@ -392,7 +387,7 @@
                         </ul>
                     </div>
                     <div class="properties-content">
-                        <h3><a href="#">South Mervin Boulevard</a></h3>
+                        <h3><a href="#">South Mervin Boulevard002</a></h3>
                         <p><i class="fa fa-map-marker"></i> Merrick Way, Miami, USA</p>
                         <p class="detail-text">Lorem ipsum dolor sit amet, consectetuer adipiing elit. Aenean commodo ligula eget dolor. </p>
                         <div class="price-detail">
@@ -419,7 +414,7 @@
                         </ul>
                     </div>
                     <div class="properties-content">
-                        <h3><a href="#">South Mervin Boulevard</a></h3>
+                        <h3><a href="#">South Mervin Boulevard003</a></h3>
                         <p><i class="fa fa-map-marker"></i> Merrick Way, Miami, USA</p>
                         <p class="detail-text">Lorem ipsum dolor sit amet, consectetuer adipiing elit. Aenean commodo ligula eget dolor. </p>
                         <div class="price-detail">
@@ -430,10 +425,10 @@
                 </div>
             </div>
             <!-- End of Single properties -->
-            <div class="col-md-4 col-sm-6 hidden-md hidden-lg">
+            <div class="col-md-4 col-sm-6">
                 <div class="single-featured-properties">
                     <div class="properties-image">
-                        <a href="#"><img src="static/img/properties/6.jpg" alt=""></a>
+                        <a href="#"><img src="static/img/properties/4.jpg" alt=""></a>
                     </div>
                     <div class="sale-tag">
                         <p>For Sale</p>
@@ -446,7 +441,34 @@
                         </ul>
                     </div>
                     <div class="properties-content">
-                        <h3><a href="#">South Mervin Boulevard</a></h3>
+                        <h3><a href="#">South Mervin Boulevard004</a></h3>
+                        <p><i class="fa fa-map-marker"></i> Merrick Way, Miami, USA</p>
+                        <p class="detail-text">Lorem ipsum dolor sit amet, consectetuer adipiing elit. Aenean commodo ligula eget dolor. </p>
+                        <div class="price-detail">
+                            <p class="price-range pull-left">$ 1,23,00.000</p>
+                            <a href="#" class="price-detail pull-right">Details <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Single properties -->
+            <div class="col-md-4 col-sm-6">
+                <div class="single-featured-properties">
+                    <div class="properties-image">
+                        <a href="#"><img src="static/img/properties/4.jpg" alt=""></a>
+                    </div>
+                    <div class="sale-tag">
+                        <p>For Sale</p>
+                    </div>
+                    <div class="properties-include">
+                        <ul>
+                            <li><i class="fa fa-home"></i> 30,000 Acres</li>
+                            <li><i class="fa fa-bed"></i>4 Bedrooms</li>
+                            <li><i class="fa fa-tty"></i> 4 Bathrooms</li>
+                        </ul>
+                    </div>
+                    <div class="properties-content">
+                        <h3><a href="#">South Mervin Boulevard005</a></h3>
                         <p><i class="fa fa-map-marker"></i> Merrick Way, Miami, USA</p>
                         <p class="detail-text">Lorem ipsum dolor sit amet, consectetuer adipiing elit. Aenean commodo ligula eget dolor. </p>
                         <div class="price-detail">
