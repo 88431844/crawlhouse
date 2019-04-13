@@ -1,10 +1,11 @@
 package entity;
 
+import dto.HouseInfoDto;
 import us.codecraft.webmagic.model.annotation.ExtractBy;
 import us.codecraft.webmagic.model.annotation.TargetUrl;
 
 @TargetUrl("https://sy.zu.anjuke.com/fangyuan/(0|[1-9][0-9]*)")
-public class AnjukeInfo extends HouseInfo{
+public class AnjukeInfo extends HouseInfoDto {
 
     /**
      * 房源标题
@@ -15,7 +16,7 @@ public class AnjukeInfo extends HouseInfo{
      * 月租（元/月）
      */
     @ExtractBy("//span[@class='light info-tag']/em/text()")
-    private String monthlyRent;
+    private String monthlyRentStr;
     /**
      * 付款方式（押一付三等）
      */
@@ -36,7 +37,7 @@ public class AnjukeInfo extends HouseInfo{
      * 面积
      */
     @ExtractBy("//ul[@class='house-info-zufang cf']/li[3]/span[2]/text()")
-    private String area;
+    private String areaStr;
     /**
      * 楼层
      */
@@ -83,13 +84,13 @@ public class AnjukeInfo extends HouseInfo{
     }
 
     @Override
-    public String getMonthlyRent() {
-        return monthlyRent;
+    public String getMonthlyRentStr() {
+        return monthlyRentStr;
     }
 
     @Override
-    public void setMonthlyRent(String monthlyRent) {
-        this.monthlyRent = monthlyRent;
+    public void setMonthlyRentStr(String monthlyRentStr) {
+        this.monthlyRentStr = monthlyRentStr;
     }
 
     @Override
@@ -123,13 +124,13 @@ public class AnjukeInfo extends HouseInfo{
     }
 
     @Override
-    public String getArea() {
-        return area;
+    public String getAreaStr() {
+        return areaStr;
     }
 
     @Override
-    public void setArea(String area) {
-        this.area = area;
+    public void setAreaStr(String areaStr) {
+        this.areaStr = areaStr;
     }
 
     @Override

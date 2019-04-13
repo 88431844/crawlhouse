@@ -10,7 +10,7 @@ public class HouseInfo {
     /**
      * 月租（元/月）
      */
-    private String monthlyRent;
+    private Integer monthlyRent;
     /**
      * 付款方式（押一付三等）
      */
@@ -26,7 +26,7 @@ public class HouseInfo {
     /**
      * 面积
      */
-    private String area;
+    private Integer area;
     /**
      * 楼层
      */
@@ -58,6 +58,14 @@ public class HouseInfo {
      */
     private String source;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -66,11 +74,11 @@ public class HouseInfo {
         this.title = title;
     }
 
-    public String getMonthlyRent() {
+    public Integer getMonthlyRent() {
         return monthlyRent;
     }
 
-    public void setMonthlyRent(String monthlyRent) {
+    public void setMonthlyRent(Integer monthlyRent) {
         this.monthlyRent = monthlyRent;
     }
 
@@ -98,11 +106,11 @@ public class HouseInfo {
         this.roomType = roomType;
     }
 
-    public String getArea() {
+    public Integer getArea() {
         return area;
     }
 
-    public void setArea(String area) {
+    public void setArea(Integer area) {
         this.area = area;
     }
 
@@ -160,13 +168,5 @@ public class HouseInfo {
 
     public void setSource(String source) {
         this.source = source;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 }

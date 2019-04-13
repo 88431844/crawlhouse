@@ -4,11 +4,11 @@
   <resultMap id="BaseResultMap" type="entity.HouseInfo">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="title" jdbcType="VARCHAR" property="title" />
-    <result column="monthlyRent" jdbcType="VARCHAR" property="monthlyRent" />
+    <result column="monthlyRent" jdbcType="INTEGER" property="monthlyRent" />
     <result column="payType" jdbcType="VARCHAR" property="payType" />
     <result column="rentType" jdbcType="VARCHAR" property="rentType" />
     <result column="roomType" jdbcType="VARCHAR" property="roomType" />
-    <result column="area" jdbcType="VARCHAR" property="area" />
+    <result column="area" jdbcType="INTEGER" property="area" />
     <result column="floor" jdbcType="VARCHAR" property="floor" />
     <result column="addr" jdbcType="VARCHAR" property="addr" />
     <result column="decoration" jdbcType="VARCHAR" property="decoration" />
@@ -31,15 +31,17 @@
     delete from houseinfo
     where id = #{id,jdbcType=INTEGER}
   </delete>
+
+
   <insert id="insert" parameterType="entity.HouseInfo">
     insert into houseinfo (id, title, monthlyRent, 
       payType, rentType, roomType, 
       area, floor, addr, 
       decoration, releaseDate, fristImg, 
       faceTo, source)
-    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{monthlyRent,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{monthlyRent,jdbcType=INTEGER}, 
       #{payType,jdbcType=VARCHAR}, #{rentType,jdbcType=VARCHAR}, #{roomType,jdbcType=VARCHAR}, 
-      #{area,jdbcType=VARCHAR}, #{floor,jdbcType=VARCHAR}, #{addr,jdbcType=VARCHAR}, 
+      #{area,jdbcType=INTEGER}, #{floor,jdbcType=VARCHAR}, #{addr,jdbcType=VARCHAR}, 
       #{decoration,jdbcType=VARCHAR}, #{releaseDate,jdbcType=VARCHAR}, #{fristImg,jdbcType=VARCHAR}, 
       #{faceTo,jdbcType=VARCHAR}, #{source,jdbcType=VARCHAR})
   </insert>
@@ -97,7 +99,7 @@
         #{title,jdbcType=VARCHAR},
       </if>
       <if test="monthlyRent != null">
-        #{monthlyRent,jdbcType=VARCHAR},
+        #{monthlyRent,jdbcType=INTEGER},
       </if>
       <if test="payType != null">
         #{payType,jdbcType=VARCHAR},
@@ -109,7 +111,7 @@
         #{roomType,jdbcType=VARCHAR},
       </if>
       <if test="area != null">
-        #{area,jdbcType=VARCHAR},
+        #{area,jdbcType=INTEGER},
       </if>
       <if test="floor != null">
         #{floor,jdbcType=VARCHAR},
@@ -134,59 +136,15 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="entity.HouseInfo">
-    update houseinfo
-    <set>
-      <if test="title != null">
-        title = #{title,jdbcType=VARCHAR},
-      </if>
-      <if test="monthlyRent != null">
-        monthlyRent = #{monthlyRent,jdbcType=VARCHAR},
-      </if>
-      <if test="payType != null">
-        payType = #{payType,jdbcType=VARCHAR},
-      </if>
-      <if test="rentType != null">
-        rentType = #{rentType,jdbcType=VARCHAR},
-      </if>
-      <if test="roomType != null">
-        roomType = #{roomType,jdbcType=VARCHAR},
-      </if>
-      <if test="area != null">
-        area = #{area,jdbcType=VARCHAR},
-      </if>
-      <if test="floor != null">
-        floor = #{floor,jdbcType=VARCHAR},
-      </if>
-      <if test="addr != null">
-        addr = #{addr,jdbcType=VARCHAR},
-      </if>
-      <if test="decoration != null">
-        decoration = #{decoration,jdbcType=VARCHAR},
-      </if>
-      <if test="releaseDate != null">
-        releaseDate = #{releaseDate,jdbcType=VARCHAR},
-      </if>
-      <if test="fristImg != null">
-        fristImg = #{fristImg,jdbcType=VARCHAR},
-      </if>
-      <if test="faceTo != null">
-        faceTo = #{faceTo,jdbcType=VARCHAR},
-      </if>
-      <if test="source != null">
-        source = #{source,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+
   <update id="updateByPrimaryKey" parameterType="entity.HouseInfo">
     update houseinfo
     set title = #{title,jdbcType=VARCHAR},
-      monthlyRent = #{monthlyRent,jdbcType=VARCHAR},
+      monthlyRent = #{monthlyRent,jdbcType=INTEGER},
       payType = #{payType,jdbcType=VARCHAR},
       rentType = #{rentType,jdbcType=VARCHAR},
       roomType = #{roomType,jdbcType=VARCHAR},
-      area = #{area,jdbcType=VARCHAR},
+      area = #{area,jdbcType=INTEGER},
       floor = #{floor,jdbcType=VARCHAR},
       addr = #{addr,jdbcType=VARCHAR},
       decoration = #{decoration,jdbcType=VARCHAR},
@@ -196,6 +154,7 @@
       source = #{source,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
 
   <select id="haveHouseInfo" parameterType="entity.HouseInfo" resultType="java.lang.Integer">
     select
@@ -254,7 +213,7 @@
         and roomType = #{roomType,jdbcType=VARCHAR}
       </if>
       <if test="area != null">
-        and area = #{area,jdbcType=VARCHAR}
+        and area = #{area}
       </if>
       <if test="floor != null">
         and floor = #{floor,jdbcType=VARCHAR}

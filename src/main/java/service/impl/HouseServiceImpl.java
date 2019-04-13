@@ -1,8 +1,10 @@
 package service.impl;
 
-import dao.HouseInfoMapper;
-import entity.HouseInfo;
 import java.util.List;
+
+import dao.HouseInfoMapper;
+import dto.HouseInfoDto;
+import entity.HouseInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import service.HouseService;
 
@@ -12,7 +14,7 @@ public class HouseServiceImpl implements HouseService {
   private HouseInfoMapper houseInfoMapper;
 
   @Override
-  public List<HouseInfo> seach(HouseInfo houseInfo) {
-    return houseInfoMapper.seach(houseInfo);
+  public List<HouseInfoDto> seach(HouseInfoDto houseInfoDto) {
+    return null;
   }
 }

@@ -1,12 +1,13 @@
 package entity;
 
+import dto.HouseInfoDto;
 import us.codecraft.webmagic.model.annotation.ExtractBy;
 import us.codecraft.webmagic.model.annotation.TargetUrl;
 
 //@TargetUrl("https://sy.zu.fang.com/chuzu/([0-9_][0-9_][0-9_][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9_][0-9]).htm")
 @TargetUrl("https://sy.zu.fang.com/chuzu/([0-9][0-9_][0-9_][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9_][0-9]).htm")
 
-public class FangInfo extends HouseInfo{
+public class FangInfo extends HouseInfoDto {
     /**
      * 房源标题
      */
@@ -16,7 +17,7 @@ public class FangInfo extends HouseInfo{
      * 月租（元/月）
      */
     @ExtractBy("//div[@class='trl-item sty1']/i/text()")
-    private String monthlyRent;
+    private String monthlyRentStr;
     /**
      * 付款方式（押一付三等）
      */
@@ -35,22 +36,22 @@ public class FangInfo extends HouseInfo{
     /**
      * 面积
      */
-    @ExtractBy("//div[@class='tr-line clearfix']/div[1]/div[@class='tt']/text()")
-    private String area;
+    @ExtractBy("//div[@class='tr-line clearfix']/div[3]/div[@class='tt']/text()")
+    private String areaStr;
     /**
      * 楼层
      */
-    @ExtractBy("//div[@class='trl-item1 w182']/div[@class='tt']/text()")
+    @ExtractBy("//div[@class='tab-cont-right']/div[4]/div[2]/div[1]/text()")
     private String floor;
     /**
      * 地址
      */
-    @ExtractBy("//div[@class='tr-line clearfix']/div[2]/div[@class='tt']/text()")
+    @ExtractBy("//div[@class='tab-cont-right']/div[5]/div[1]/div[2]/a/text()")
     private String addr;
     /**
      * 装修情况（简单装修，豪华装修等）
      */
-    @ExtractBy("//div[@class='tr-line clearfix']/div[3]/div[@class='tt']/text()")
+    @ExtractBy("//div[@class='tab-cont-right']/div[4]/div[3]/div[1]/text()")
     private String decoration;
     /**
      * 发布时间
@@ -65,7 +66,7 @@ public class FangInfo extends HouseInfo{
     /**
      * 朝向（东北等）
      */
-    @ExtractBy("//div[@class='tr-line clearfix']/div[2]/div[@class='tt']/text()")
+    @ExtractBy("//div[@class='tab-cont-right']/div[4]/div[1]/div[1]/text()")
     private String faceTo;
     /**
      * 来源
@@ -83,13 +84,13 @@ public class FangInfo extends HouseInfo{
     }
 
     @Override
-    public String getMonthlyRent() {
-        return monthlyRent;
+    public String getMonthlyRentStr() {
+        return monthlyRentStr;
     }
 
     @Override
-    public void setMonthlyRent(String monthlyRent) {
-        this.monthlyRent = monthlyRent;
+    public void setMonthlyRentStr(String monthlyRentStr) {
+        this.monthlyRentStr = monthlyRentStr;
     }
 
     @Override
@@ -123,13 +124,13 @@ public class FangInfo extends HouseInfo{
     }
 
     @Override
-    public String getArea() {
-        return area;
+    public String getAreaStr() {
+        return areaStr;
     }
 
     @Override
-    public void setArea(String area) {
-        this.area = area;
+    public void setAreaStr(String areaStr) {
+        this.areaStr = areaStr;
     }
 
     @Override
@@ -182,6 +183,15 @@ public class FangInfo extends HouseInfo{
         this.fristImg = fristImg;
     }
 
+    @Override
+    public String getFaceTo() {
+        return faceTo;
+    }
+
+    @Override
+    public void setFaceTo(String faceTo) {
+        this.faceTo = faceTo;
+    }
 
     @Override
     public String getSource() {
@@ -191,16 +201,6 @@ public class FangInfo extends HouseInfo{
     @Override
     public void setSource(String source) {
         this.source = source;
-    }
-
-    @Override
-    public String getFaceTo() {
-        return faceTo;
-    }
-
-    @Override
-    public void setFaceTo(String faceTo) {
-        this.faceTo = faceTo;
     }
 }
 

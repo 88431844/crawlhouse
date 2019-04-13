@@ -33,11 +33,11 @@ DROP TABLE IF EXISTS `houseinfo`;
 CREATE TABLE `houseinfo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL COMMENT '房源标题',
-  `monthlyRent` varchar(255) DEFAULT NULL COMMENT '月租（元/月）',
+  `monthlyRent` int(11) DEFAULT NULL COMMENT '月租（元/月）',
   `payType` varchar(255) DEFAULT NULL COMMENT '付款方式（押一付三等）',
   `rentType` varchar(255) DEFAULT NULL COMMENT '租赁方式（整租等）',
   `roomType` varchar(255) DEFAULT NULL COMMENT '房屋类型（两室一厅等）',
-  `area` varchar(255) DEFAULT NULL COMMENT '面积',
+  `area` int(11) DEFAULT NULL COMMENT '面积',
   `floor` varchar(255) DEFAULT NULL COMMENT '楼层',
   `addr` varchar(255) DEFAULT NULL COMMENT '地址',
   `decoration` varchar(255) DEFAULT NULL COMMENT '装修情况（简单装修，豪华装修等）',
@@ -46,4 +46,4 @@ CREATE TABLE `houseinfo` (
   `faceTo` varchar(255) DEFAULT NULL COMMENT '朝向（东北等）',
   `source` varchar(255) DEFAULT NULL COMMENT '来源：房天下；安居客',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8mb4;

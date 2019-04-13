@@ -1,8 +1,9 @@
 package service;
 
-import entity.HouseInfo;
+import dto.HouseInfoDto;
+
 import java.util.List;
 
 public interface HouseService {
-  List<HouseInfo> seach(HouseInfo houseInfo);
+  List<HouseInfoDto> seach(HouseInfoDto houseInfoDto);
 }
