@@ -55,14 +55,14 @@
       function fang() {
         if (confirm("是否开始，爬取房天下房源信息？")) {
           window.location.href = "crawl/fang";
-          alert("请耐心等待，正在爬取中。。。。");
+          alert("即将开始爬取，请耐心等待，请勿刷新页面！！！！！");
         }
 
       }
       function anjuke() {
         if (confirm("是否开始，爬取房天下房源信息？")) {
           window.location.href = "crawl/anjuke";
-          alert("请耐心等待，正在爬取中。。。。");
+          alert("即将开始爬取，请耐心等待，请勿刷新页面！！！！！");
         }
 
       }

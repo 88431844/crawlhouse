@@ -61,7 +61,7 @@ public class AnjukeInfo extends HouseInfoDto {
     /**
      * 房源首图
      */
-    @ExtractBy("//div[@id='room_pic_wrap']/div[1]/img/@src")
+    @ExtractBy("//div[@id='room_pic_wrap']/div[2]/img/@data-src")
     private String fristImg;
     /**
      * 朝向（东北等）
