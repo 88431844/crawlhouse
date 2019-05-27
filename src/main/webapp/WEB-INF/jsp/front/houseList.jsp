@@ -52,9 +52,9 @@
 
       }
 
-      function fang() {
-        if (confirm("是否开始，爬取房天下房源信息？")) {
-          window.location.href = "crawl/fang";
+      function lianjia() {
+        if (confirm("是否开始，爬取链家房源信息？")) {
+          window.location.href = "crawl/lianjia";
           alert("即将开始爬取，请耐心等待，请勿刷新页面！！！！！");
         }
 
@@ -111,7 +111,7 @@
 <!-- Property query area start -->
 <section class="property-query-area">
     <div class="container">
-        <button onclick="fang()">爬取房天下</button>
+        <button onclick="lianjia()">爬取链家</button>
         <button onclick="anjuke()">爬取安居客</button>
 
         <div class="row">

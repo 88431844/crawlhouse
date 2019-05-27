@@ -4,6 +4,7 @@ import controller.front.HouseController;
 import crawl.crawl;
 import entity.AnjukeInfo;
 import entity.FangInfo;
+import entity.Lianjia;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,6 +38,17 @@ public class CrawlController {
         System.out.println("fang crawl start ....");
         crawl.crawlRun("https://sy.zu.fang.com", FangInfo.class,5,GB2312);
         System.out.println("fang crawl stop ....");
+        modelAndView = houseController.listHouseInfo(modelAndView);
+        modelAndView.setViewName("redirect:/house/index");
+        return modelAndView;
+    }
+
+    @RequestMapping("/lianjia")
+    public ModelAndView lianjia(){
+        ModelAndView modelAndView = new ModelAndView();
+        System.out.println("lianjia crawl start ....");
+        crawl.crawlRun("https://sy.lianjia.com/zufang", Lianjia.class,5,UTF8);
+        System.out.println("lianjia crawl stop ....");
         modelAndView = houseController.listHouseInfo(modelAndView);
         modelAndView.setViewName("redirect:/house/index");
         return modelAndView;
